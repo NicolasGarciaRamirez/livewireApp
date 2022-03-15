@@ -1,32 +1,29 @@
 <x-guest-layout>
+    <x-jet-validation-errors class="m-4 p-2 container-fluid border-rounded text-center alert-danger text-white w-25" />
+
+    <div class="d-flex justify-content-center align-items-center text-center">
+        <h3>Register GrandStore®</h3>
+    </div>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
         </x-slot>
-
-        <x-jet-validation-errors class="mb-4" />
-
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}" class="container text-center justify-content-center">
             @csrf
-
-            <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            <div class="d-flex flex-row align-items-center justify-content-center">
+                <x-jet-input id="name" class="form-control w-25 block mt-1 w-full" type="text" name="name" placeholder="Name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
-            <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            <div class="d-flex flex-row align-items-center justify-content-center mt-4">
+                <x-jet-input id="email" class="form-control w-25 block mt-1 w-full" type="email" name="email" placeholder="Email" :value="old('email')" required />
             </div>
 
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+            <div class="d-flex flex-row align-items-center justify-content-center mt-4">
+                <x-jet-input id="password" class="form-control w-25 block mt-1 w-full" type="password" name="password" placeholder="password" required autocomplete="new-password" />
             </div>
 
-            <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+            <div class="d-flex flex-row align-items-center justify-content-center mt-4">
+                <x-jet-input id="password_confirmation" class="form-control w-25 block mt-1 w-full" type="password" name="password_confirmation" placeholder="Password Confirm" required autocomplete="new-password" />
             </div>
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
@@ -51,7 +48,7 @@
                     {{ __('Already registered?') }}
                 </a>
 
-                <x-jet-button class="ml-4">
+                <x-jet-button class="bg-primary text-white ml-4">
                     {{ __('Register') }}
                 </x-jet-button>
             </div>

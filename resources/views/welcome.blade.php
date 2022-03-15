@@ -8,12 +8,13 @@
         <meta name="viewport" content= "width=device-width, user-scalable=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <link rel="stylesheet" href="{{ mix('/css/app.css') }}">        
+        <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
         <title>Poke Api</title>
     </head>
     <body class="container-fluid">
+        @include('template.header')
         <div class="text-center">
-            <h2>Poke Api</h2>
+            <h2>GrandStore</h2>
         </div>
 
         <script src="{{ mix('/js/app.js') }}"></script>

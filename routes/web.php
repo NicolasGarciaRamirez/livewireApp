@@ -13,25 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', App\Http\Livewire\PokeIndex::class);
-Route::get('/chat', App\Http\Livewire\Chat::class);
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/', function(){
-    $mesages = App\Models\Message::with('user')->get();
-    return view('chat', ['messages' => $mesages]);
-
-})->middleware('auth');
-
-Route::resource('messages', App\Http\Controllers\MessageController::class)->only([
-    'index',
-    'store'
-]);
+Route::get('/', \App\Http\Livewire\PokeIndex::class)->name('home')->middleware('auth');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

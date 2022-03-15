@@ -24,7 +24,7 @@ class PokeIndex extends Component
 
         $response->body = json_decode($response->body());
         $this->pokemons = $response->body->results;
-        // dd($this->pokemons);
+//         dd($this->pokemons);
     }
 
     public function seeAbility($url)
@@ -34,7 +34,7 @@ class PokeIndex extends Component
 
         $this->ability = $response->body->abilities;
         $this->count = count($this->ability);
-        
+
         $this->mount();
     }
 
@@ -46,14 +46,14 @@ class PokeIndex extends Component
     public function alert()
     {
         $this->alert('warning', 'Autenticate!', [
-            'position' =>  'top-end', 
-            'timer' =>  3000,  
-            'toast' =>  true, 
-            'text' =>  '', 
-            'confirmButtonText' =>  'Ok', 
-            'cancelButtonText' =>  'Cancel', 
-            'showCancelButton' =>  true, 
-            'showConfirmButton' =>  false, 
+            'position' =>  'top-end',
+            'timer' =>  3000,
+            'toast' =>  true,
+            'text' =>  '',
+            'confirmButtonText' =>  'Ok',
+            'cancelButtonText' =>  'Cancel',
+            'showCancelButton' =>  true,
+            'showConfirmButton' =>  false,
         ]);
     }
 

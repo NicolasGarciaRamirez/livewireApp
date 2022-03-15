@@ -1,6 +1,9 @@
 <div>
     <div class="d-flex flex-row flex-wrap p-2 justify-content-center align-items-center">
-        @if($this->count < 1)
+        @foreach($pokemons as $pokemon)
+            {{$pokemon->name}}
+        @endforeach
+        @if($count < 1)
 
             @foreach($pokemons as $pokemon)
                 <div class="card m-2">
@@ -27,7 +30,7 @@
                 <div class="d-flex justify-content-center align-items-center flex-column">
                     <h3>Debes estar autenticado para visualizar las abilidades del pokemon</h3>
                     <button class="btn bg-danger text-white" ><a href="/login" >Autenticate</a></button>
-                </div>    
+                </div>
             @endif
         @endif
     </div>

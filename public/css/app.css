@@ -10002,3 +10002,10 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.alert-danger {
+  background: #e3342f !important;
+}
+
+.border-rounded {
+  border-radius: 30px;
+}
